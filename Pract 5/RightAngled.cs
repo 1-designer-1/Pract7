@@ -33,7 +33,7 @@ namespace Pract_5
 
         public double Ploshad()
         {
-            return  First * Second / 2;
+            return (double)First * Second / 2;
         }
 
 
