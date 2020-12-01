@@ -24,12 +24,12 @@ namespace Pract_5
 
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Практическая работа № 6\n" +
+            MessageBox.Show("Практическая работа № 7\n" +
                 "Серегин Денис \n" +
                 "ИСП-31\n" +
                 "Задание \n" +
-                "Использовать класс Pair (пара четных чисел). Разработать операцию перемножения пар(а, b) * (с, d) = (а * c, b * d). " +
-                "Разработать операцию инкремента для удвоения пары чисел.", "О программе", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                "Использовать класс Pair (пара четных чисел). Определить производный класс треугольник RightAngled с полями-катетами." +
+                "Определить методы вычисления гипотенузы и площади треугольника.", "О программе", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
 
         private void очиститьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,26 +38,22 @@ namespace Pract_5
             textBox2.Clear();
             textBox3.Clear();
             textBox4.Clear();
-            textBox5.Clear();
-            textBox6.Clear();
+
 
 
         }
         private void заполнтьToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            RightAngled rightAngled = new RightAngled(Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text));
+            int resuiltGupotez = rightAngled.Gupotenyza();
+            textBox3.Text = resuiltGupotez.ToString();
+            double resultPloshad = rightAngled.Ploshad();
+            textBox4.Text = resultPloshad.ToString();
 
-            Pair pair1 = new Pair(Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox2.Text));
-            Pair pair2 = new Pair(Convert.ToInt32(textBox3.Text), Convert.ToInt32(textBox4.Text));
-            Pair Multiply = Pair.Multiply(pair1, pair2);
-            textBox5.Text = ("(" + Multiply.First + " ; " + Multiply.Second + ")").ToString();
-            Pair Multiply1 = Pair.Multiply2(pair1);
-            textBox6.Text = ("(" + Multiply1.First + " ; " + Multiply1.Second + ")").ToString();
-            Pair Multiple = pair1 * pair2;
-            textBox7.Text = ("(" + Multiple.First + " ; " + Multiple.Second + ")").ToString();
-            Pair Multiple2 = pair1++;
-            textBox8.Text = ("(" + Multiple2.First + " ; " + Multiple2.Second + ")").ToString();
+
+
+
+
         }
-
-
     }
 }

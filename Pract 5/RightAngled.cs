@@ -15,28 +15,25 @@ namespace Pract_5
             _firstKatet = one;
             _secondKatet = two;
         }
-        public int First1
+        public new int First
         {
             get => _firstKatet;
             set { _firstKatet = value; }
         }
-        public int Second2
+        public new int Second
         {
             get => _secondKatet;
             set { _secondKatet = value; }
 
         }
-        public static RightAngled Gupotenyza(RightAngled first, RightAngled second)
+        public int Gupotenyza()
         {
-            return new RightAngled(first.First1 * first.First1, second.Second2 * second.Second2);
+            return First * First + Second * Second;
         }
-        public static RightAngled operator +(RightAngled firstPair, RightAngled secondPair)
+
+        public double Ploshad()
         {
-            return new RightAngled(firstPair.First1 + secondPair.First1, firstPair.Second2 + secondPair.Second2);
-        }
-        public static double  Ploshad (RightAngled first, RightAngled second)
-        {
-            return (1 / 2 * (first.First1 * second.Second2));
+            return  First * Second / 2;
         }
 
 
