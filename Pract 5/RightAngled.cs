@@ -28,7 +28,7 @@ namespace Pract_5
         }
         public int Gupotenyza()
         {
-            return First * First + Second * Second;
+            return (int)Math.Sqrt(First * First + Second * Second);
         }
 
         public double Ploshad()
